@@ -1,0 +1,14 @@
+<h2>Beneficiaries</h2>
+
+<ul>
+    <li>
+        Add a beneficiary<br/>
+        <input #createBeneficiaryName /> 
+        <button (click)="createBeneficiary(createBeneficiaryName.value); createBeneficiaryName.value = ''">
+            Add
+        </button>
+    </li>
+    <li *ngFor="let beneficiary of beneficiaries">
+        <a [routerLink]="['/beneficiary', beneficiary.id]">{{beneficiary.name}}</a>
+    </li>
+</ul>
