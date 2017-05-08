@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Beneficiary } from "../models/beneficiary";
+import { NotificationService } from "../services/notification.service";
+import { AppNotification } from "../models/app-notification";
 
 @Component({
     selector: 'my-app',
     templateUrl: "./app.component.html" 
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
     title = 'Donations';
+    notifications: AppNotification[] = [];
+
+    constructor(private _notificationService: NotificationService) {}
+
+    public ngOnInit(): void {
+        this._notificationService.getNotifications()
+            .subscribe(notification => {
+                if (notification.duration > 0) {
+                    setTimeout(() => {
+                        let idx = this.notifications.indexOf(notification);
+                        this.notifications.splice(idx, 1);
+                    }, notification.duration);
+                }
+
+                this.notifications.push(notification);
+            });
+    }
 }

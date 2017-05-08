@@ -54,7 +54,7 @@ export class BeneficiaryService
             this.getAll().then(list => {
                 if (list.find(beneficiary => beneficiary.name === name))
                 {
-                    reject(new Error(`A beneficiary named '${name}' already exists.`));
+                    reject(new Error(`A beneficiary named '${name}' already exists`));
                 }
                 else
                 {
@@ -77,7 +77,7 @@ export class BeneficiaryService
             this.getAll().then(list => {
                 if (list.find(b => b.name === beneficiary.name))
                 {
-                    reject(new Error(`A beneficiary named '${beneficiary.name}' already exists.`));
+                    reject(new Error(`A beneficiary named '${beneficiary.name}' already exists`));
                 }
                 else
                 {

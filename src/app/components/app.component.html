@@ -4,4 +4,13 @@
     <a routerLink="/beneficiaries" routerLinkActive="active">Beneficiaries</a> 
 </nav>
 
+<div *ngIf="notifications.length">
+    <ul *ngFor="let notification of notifications">
+        <li>
+            <h3 *ngIf="notification.title">{{notification.title}}</h3>
+            {{notification.message}}
+        </li>
+    </ul>
+</div>
+
 <router-outlet></router-outlet>

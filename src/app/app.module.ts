@@ -7,6 +7,7 @@ import { AppComponent } from "./components/app.component";
 import { BeneficiariesComponent } from "./components/beneficiaries.component";
 import { BeneficiaryDetailComponent } from "./components/beneficiary-detail.component";
 import { BeneficiaryService } from "./services/beneficiary.service";
+import { NotificationService } from "./services/notification.service";
 
 @NgModule({
     imports: [ 
@@ -19,7 +20,10 @@ import { BeneficiaryService } from "./services/beneficiary.service";
         BeneficiariesComponent,
         BeneficiaryDetailComponent
     ],
-    providers: [ BeneficiaryService ],
+    providers: [
+        BeneficiaryService,
+        NotificationService
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
