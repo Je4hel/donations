@@ -1,14 +1,14 @@
 <h2>Beneficiaries</h2>
 
-<ul>
-    <li>
-        Add a beneficiary<br/>
-        <input #createBeneficiaryName /> 
-        <button (click)="createBeneficiary(createBeneficiaryName.value); createBeneficiaryName.value = ''">
-            Add
-        </button>
-    </li>
-    <li *ngFor="let beneficiary of beneficiaries">
-        <a [routerLink]="['/beneficiary', beneficiary.id]">{{beneficiary.name}}</a>
+<md-input-container class="beneficiary-item-new">
+    <input mdInput #createBeneficiaryName placeholder="New beneficiary name" /> 
+</md-input-container>
+<button md-button (click)="createBeneficiary(createBeneficiaryName.value); createBeneficiaryName.value = ''">
+    Add
+</button>
+
+<ul id="beneficiaries">
+    <li *ngFor="let beneficiary of beneficiaries" class="beneficiary-item">
+        <a [routerLink]="['/beneficiary', beneficiary.id]"><md-card>{{beneficiary.name}}</md-card></a>
     </li>
 </ul>

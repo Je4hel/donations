@@ -7,7 +7,8 @@ import { AppNotification, NotificationType } from "../models/app-notification";
 
 @Component({
     selector: "beneficiaries",
-    templateUrl: "./beneficiaries.component.html"
+    templateUrl: "./beneficiaries.component.html",
+    styleUrls: ["./beneficiaries.component.css"]
 })
 export class BeneficiariesComponent implements OnInit {
     beneficiaries: Beneficiary[];

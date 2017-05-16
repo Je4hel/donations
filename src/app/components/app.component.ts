@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 import { NotificationService } from "../services/notification.service";
-import { AppNotification } from "../models/app-notification";
+import { AppNotification, NotificationType } from "../models/app-notification";
 
 @Component({
     selector: 'my-app',
-    templateUrl: "./app.component.html" 
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
     title = 'Donations';

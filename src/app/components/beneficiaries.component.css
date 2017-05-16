@@ -1,0 +1,21 @@
+#beneficiaries {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.beneficiary-item {
+    display: inline-block;
+    margin: 10px;
+    width: calc(20% - 10px);
+
+    text-align: center;
+}
+
+.beneficiary-item md-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+}

@@ -1,16 +1,25 @@
-<h1>{{title}}</h1>
+<md-toolbar>{{title}}</md-toolbar>
 
-<nav>
-    <a routerLink="/beneficiaries" routerLinkActive="active">Beneficiaries</a> 
-</nav>
+<md-sidenav-container>
+    <md-sidenav mode="side" opened="true">
+        <md-nav-list>
+            <a md-list-item routerLink="/#" routerLinkActive="active">Dashboard</a>
+            <a md-list-item routerLink="/beneficiaries" routerLinkActive="active">Beneficiaries</a>
+            <a md-list-item routerLink="/#" routerLinkActive="active">History</a>
+            <a md-list-item routerLink="/#" routerLinkActive="active">Help</a>
+        </md-nav-list>
+    </md-sidenav>
 
-<div *ngIf="notifications.length">
-    <ul *ngFor="let notification of notifications">
-        <li>
-            <h3 *ngIf="notification.title">{{notification.title}}</h3>
-            {{notification.message}}
-        </li>
-    </ul>
-</div>
-
-<router-outlet></router-outlet>
+    <div id="page-content">
+        <div *ngIf="notifications.length">
+            <ul *ngFor="let notification of notifications">
+                <li>
+                    <h3 *ngIf="notification.title">{{notification.title}}</h3>
+                    {{notification.message}}
+                </li>
+            </ul>
+        </div>
+        
+        <router-outlet></router-outlet>
+    </div>
+</md-sidenav-container>

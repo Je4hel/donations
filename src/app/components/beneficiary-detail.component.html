@@ -1,14 +1,17 @@
 <div *ngIf="beneficiary">
     <div *ngIf="!isEditing; else editingLayout">
         <h2>{{beneficiary.name}}</h2>
-        <button (click)="goBack()">Back</button> 
-        <button (click)="switchEditing()">Edit</button> 
-        <button (click)="deleteBeneficiary()">Delete</button>
+        <button md-button (click)="goBack()">Back</button> 
+        <button md-button (click)="switchEditing()">Edit</button> 
+        <button md-button (click)="deleteBeneficiary()">Delete</button>
     </div>
     <ng-template #editingLayout>
         <div>
-            <h2><input [(ngModel)]="beneficiary.name"/></h2>
-            <button (click)="updateBeneficiary()">Save</button> <button (click)="switchEditing()">Cancel</button>
+            <md-input-container>
+                <input mdInput [(ngModel)]="beneficiary.name"/>
+            </md-input-container>
+            <button md-button (click)="updateBeneficiary()">Save</button>
+            <button md-button (click)="switchEditing()">Cancel</button>
         </div>
     </ng-template>
 </div>
